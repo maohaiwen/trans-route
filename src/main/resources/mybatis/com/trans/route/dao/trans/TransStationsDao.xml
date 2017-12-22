@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trans.route.dao.TransStationsDao">
+
+	<resultMap type="com.trans.route.model.TransStationsEntity" id="transMap">
+		<result column="id" property="id" />
+		<result column="route_id" property="routeId" />
+		<result column="station_name" property="stationName" />
+		<result column="stop_type" property="stopType" />
+		<result column="stop_id" property="stopId" />
+		<result column="x" property="x" />
+		<result column="y" property="y" />
+	</resultMap>
+
+	<select id="getStationList" resultMap="transMap">
+		select * from trans_stations limit 10
+	</select>
+
+</mapper>
